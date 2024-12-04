@@ -218,14 +218,18 @@ select {
 .extra-text {
   display: none;
   font-size: 16px;
-  margin-left: 10px;
+  margin-top: 10px;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, display 0.3s ease-in-out;
 }
 
-.extra-text.visible {
+.extra-text[style*="block"] {
   display: block;
   opacity: 1;
+}
+
+.content-info a {
+  color: #ff1030;
 }
 
 #response {
