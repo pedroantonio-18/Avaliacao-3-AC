@@ -2,11 +2,9 @@ const toggleButtons = document.querySelectorAll(".toggle-button");
 
 toggleButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const extraText =
-      button.parentElement.nextElementSibling.querySelector(".extra-text");
-    const isHidden =
-      extraText.style.display === "none" || !extraText.style.display;
-    extraText.style.display = isHidden ? "block" : "none";
+    const contentInfo = button.closest(".container").querySelector(".extra-text");
+    const isHidden = contentInfo.style.display === "none" || !contentInfo.style.display;
+    contentInfo.style.display = isHidden ? "block" : "none";
     button.textContent = isHidden ? "-" : "+";
   });
 });
