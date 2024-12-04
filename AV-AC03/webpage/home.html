@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaliação 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="menu">
+        <li><a href="home.html">Início</a></li>
+        <li><a href="about.html">Sobre o Projeto</a></li>
+      </ul>
+    </header>
+    <main>
+      <h1 class="main-title">Questinário de Escolha de CPU</h1>
+      <form action="/submit" id="quiz-q1">
+        <div class="form-group">
+          <p class="question">
+            <span class="q-color">1.</span> Qual é seu principal objetivo de
+            uso?
+          </p>
+          <div class="use-container">
+            <select name="use" id="use" required>
+                <option value="">Selecione uma opção</option>
+                <option value="gaming">Jogos</option>
+                <option value="video-editing">Edição de Vídeo</option>
+                <option value="study">Estudos</option>
+                <option value="online-nav">Navegação pela Internet</option>
+                <option value="programming">Programação</option>
+                <option value="3d-render">Renderização 3D</option>
+                <option value="sci-sim">Simulações Científicas</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p class="question">
+            <span class="q-color">2.</span> Qual a faixa de valor que você pode
+            investir?
+          </p>
+          <div class="investiment">
+            <input
+              type="number"
+              id="from"
+              name="from"
+              min="530"
+              step="100"
+              value="530"
+              required
+            />
+            <span>até</span>
+            <input
+              type="number"
+              id="to"
+              name="to"
+              min="0"
+              step="100"
+              value="10000"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p class="question">
+            <span class="q-color">3.</span> Qual nível de consumo de energia
+            você prefere?
+          </p>
+            <div class="energy-levels">
+              <div class="energy-option" id="low-energy" onclick="selectEnergyLevel('Low')">
+                <h3 id="low">Baixo</h3>
+                <p>Para dispositivos compactos e eficientes, focados em menor consumo para tarefas leves.</p>
+              </div>
+          
+              <div class="energy-option" id="medium-energy" onclick="selectEnergyLevel('Medium')">
+                <h3 id="medium">Médio</h3>
+                <p>Para dispositivos mais intermediários, equilibrando desempenho e consumo para tarefas variadas.</p>
+              </div>
+          
+              <div class="energy-option" id="high-energy" onclick="selectEnergyLevel('High')">
+                <h3 id="high">Alto</h3>
+                <p>Para máquinas que priorizam máxima potência para tarefas intensivas, sem foco na economia</p>
+              </div>
+            </div>
+          
+            <input type="hidden" id="energy-consumption" 
+            name="energy_consumption" value="">
+
+            <div id="error-message">Por favor, selecione um nível de consumo de energia.</div>
+          </div>          
+        </div>
+
+        <div class="form-group">
+          <p class="question">
+            <span class="q-color">4.</span> Você tem preferência por alguma marca de CPU?
+            <div class="brand-container">
+              <select name="brand" id="brand">
+                  <option value="">Selecione uma opção</option>
+                  <option value="no-preference">Não possuo uma preferência</option>
+                  <option value="intel">Intel</option>
+                  <option value="amd">AMD</option>
+                  <option value="apple">Apple</option>
+                  <option value="qualcomm">Qualcomm</option>
+                </select>
+            </div>
+          </p>
+        </div>
+
+        <div class="form-group">
+          <p class="question">
+            <span class="q-color">5.</span> Qual o sistema operacional de sua preferência?
+          </p>
+          <div class="os-container">
+            <select name="os" id="os">
+              <option value="">Selecione uma opção</option>
+              <option value="windows">Windows</option>
+              <option value="linux">Linux</option>
+              <option value="macos">MacOS</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <p class="question">
+            <span class="q-color">6.</span> Que tipo de dispositivo você planeja utilizar?
+            <div class="device-container">
+              <select name="device" id="device" required>
+                <option value="">Selecione uma opção</option>
+                <option value="desktop">Computador de Mesa</option>
+                <option value="laptop">Notebook</option>
+              </select>
+            </div>
+          </p>
+        </div>
+
+        <button type="submit" class="submit-btn">Submeter</button>
+        <div id="response">
+          <div id="reason"></div>
+        </div>
+      </form>
+    </main>
+    <footer></footer>
+    <script src="js/home.js"></script>
+  </body>
+</html>
